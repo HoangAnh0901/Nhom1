@@ -1,9 +1,10 @@
-<<<<<<< HEAD
-
 Tạo Đăng Kí
-=======
 Tạo Đăng Kí
 Update Register
+<<<<<<< HEAD
 Undo Commit
 Amend commit (sửa commit message)
->>>>>>> dd336bcd0c0d9ca9c0d26ddba2cbaaf9addf489e
+Squash ít nhất 2 commit 
+
+=======
+>>>>>>> parent of dd336bc (feat: add register document for user module)
