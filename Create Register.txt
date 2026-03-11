@@ -1,2 +1,4 @@
 Tạo Đăng Kí
 Update Register
+Undo Commit
+Amend commit (sửa commit message)
