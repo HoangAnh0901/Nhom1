@@ -1,6 +1,7 @@
 # ============================================================
 #  GITHUB ACTIONS – WEBNEWS CI PIPELINE
 #  Tự động build Spring Boot -> .jar mỗi khi push lên main
+#  FIX: pom.xml ở root repo, không có thư mục con
 # ============================================================
 
 name: 🔨 Build Spring Boot
@@ -46,12 +47,12 @@ jobs:
       # 4. Build project Spring Boot thành file .jar
       - name: 🔨 Build with Maven
         run: mvn clean package -DskipTests
-        working-directory: ./nhom1   # Thư mục chứa pom.xml
+        # pom.xml nằm ở root repo nên không cần working-directory
 
       # 5. Lưu file .jar để tải về (artifact)
       - name: 📤 Upload JAR artifact
         uses: actions/upload-artifact@v4
         with:
           name: webnews-app-jar
-          path: nhom1/target/*.jar
+          path: target/*.jar
           retention-days: 7          # Giữ file trong 7 ngày
