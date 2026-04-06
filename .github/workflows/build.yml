@@ -1,0 +1,57 @@
+# ============================================================
+#  GITHUB ACTIONS – WEBNEWS CI PIPELINE
+#  Tự động build Spring Boot -> .jar mỗi khi push lên main
+# ============================================================
+
+name: 🔨 Build Spring Boot
+
+# ── TRIGGER: Khi nào pipeline chạy? ─────────────────────────
+on:
+  push:
+    branches:
+      - main                  # Chạy khi push lên nhánh main
+  pull_request:
+    branches:
+      - main                  # Chạy khi tạo Pull Request vào main
+
+# ── CÁC JOBS (công việc cần thực hiện) ───────────────────────
+jobs:
+
+  build:
+    name: Build & Package JAR
+    runs-on: ubuntu-latest    # Chạy trên máy ảo Ubuntu của GitHub
+
+    steps:
+
+      # 1. Tải source code từ repo về máy ảo
+      - name: ⬇️ Checkout source code
+        uses: actions/checkout@v4
+
+      # 2. Cài Java 21 (khớp với pom.xml của project)
+      - name: ☕ Setup Java 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'   # OpenJDK từ Eclipse Adoptium
+
+      # 3. Cache thư viện Maven để build nhanh hơn (~2-4 phút)
+      - name: 📦 Cache Maven dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+
+      # 4. Build project Spring Boot thành file .jar
+      - name: 🔨 Build with Maven
+        run: mvn clean package -DskipTests
+        working-directory: ./nhom1   # Thư mục chứa pom.xml
+
+      # 5. Lưu file .jar để tải về (artifact)
+      - name: 📤 Upload JAR artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: webnews-app-jar
+          path: nhom1/target/*.jar
+          retention-days: 7          # Giữ file trong 7 ngày
