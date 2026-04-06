@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KINH DOANH NGÀY NAY - Chuyên trang tài chính cao cấp</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <a href="#" class="logo-box">
+                <h1 class="logo">KINH<span>DOANH</span></h1>
+                <p class="tagline">Tạp chí tài chính chiến lược</p>
+            </a>
+            
+            <div class="search-container">
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Nhập mã chứng khoán hoặc từ khóa tin tức...">
+                    <button style="background:none; border:none; cursor:pointer; font-size:20px;" onclick="handleSearch()">🔍</button>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#">THỊ TRƯỜNG</a></li>
+                <li><a href="#">CHỨNG KHOÁN</a></li>
+                <li><a href="#">BẤT ĐỘNG SẢN</a></li>
+                <li><a href="#">VÀNG & NGOẠI TỆ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="hero">
+            <div class="hero-left">
+                <img src="https://cafefcdn.com/203337114487263232/2024/6/25/photo-1719315292277-17193152927041946434286.png" alt="Finance">
+            </div>
+            <div class="hero-right">
+                <span class="category-tag">Chứng khoán tiêu điểm</span>
+                <h2 onclick="alert('Mở bài viết chi tiết...')">VN-INDEX BỨT PHÁ KHỎI MỐC 1.300: KỶ NGUYÊN MỚI CHO NHÀ ĐẦU TƯ</h2>
+                <p>Khối lượng giao dịch đạt mức kỷ lục kèm theo sự đổ bộ của các quỹ ngoại đã tạo nên một phiên giao dịch lịch sử, mở ra triển vọng tươi sáng cho năm 2026.</p>
+            </div>
+        </section>
+
+        <section class="news-grid">
+            <a href="#" class="news-item">
+                <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=600&q=80" alt="Gold">
+                <h3>Giá vàng nhẫn lập đỉnh mới, chuyên gia khuyên gì?</h3>
+            </a>
+            <a href="#" class="news-item">
+                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80" alt="House">
+                <h3>Sức hút từ căn hộ cao cấp khu vực phía Đông TP.HCM</h3>
+            </a>
+            <a href="#" class="news-item">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Tech">
+                <h3>Cuộc đua AI giữa các tập đoàn công nghệ tỷ đô</h3>
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4 style="color:#fff; font-family:'Playfair Display'; font-size:24px; margin-bottom:15px;">KINH DOANH</h4>
+                    <p>Cơ quan ngôn luận về kinh tế và tài chính. Cung cấp dữ liệu thị trường thời gian thực và phân tích chuyên sâu.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>DANH MỤC</h4>
+                    <ul style="list-style:none;">
+                        <li><a href="#">Phân tích kỹ thuật</a></li>
+                        <li><a href="#">Hồ sơ doanh nghiệp</a></li>
+                        <li><a href="#">Kinh tế vĩ mô</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>THÔNG TIN</h4>
+                    <p>Hotline: 1900 8888</p>
+                    <p>Email: toasoan@kinhdoanh.vn</p>
+                    <p>Địa chỉ: Tòa nhà Financial, Quận 1, TP.HCM</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 KINH DOANH NGÀY NAY. BẢN QUYỀN THUỘC VỀ KINH DOANH.
+            </div>
+        </div>
+    </footer>   
+
+    <script>
+        function handleSearch() {
+            const val = document.getElementById('searchInput').value;
+            if(val) alert("Hệ thống đang tìm kiếm: " + val);
+            else alert("Vui lòng nhập nội dung!");
+        }
+    </script>
+</body>
+</html>
