@@ -1,5 +1,5 @@
 :root {
-            --primary-red: #d60e0e;
+            --primary-red: #FF0000;
             --dark-gray: #1f1f1f;
             --text-gray: #4a4a4a;
             --border-gray: #e2e2e2;
@@ -30,8 +30,10 @@
             margin: 0 auto;
             padding: 0 24px;
             display: flex;
-            flex-direction: column;
-            gap: 10px;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
         }
 
         .logo {
@@ -53,6 +55,32 @@
             justify-content: space-between;
             gap: 16px;
             flex-wrap: wrap;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background: #fff;
+            border: 1px solid var(--border-gray);
+            padding: 6px 15px;
+            border-radius: 20px;
+            width: 100%;
+            max-width: 280px;
+        }
+
+        .search-bar input {
+            border: none;
+            outline: none;
+            width: 100%;
+            font-size: 0.9rem;
+        }
+
+        .search-bar button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding-left: 5px;
+            font-size: 1rem;
         }
 
         .nav {
